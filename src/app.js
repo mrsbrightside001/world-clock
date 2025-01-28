@@ -24,6 +24,19 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  //Reykjavik
+  let reykjavikElement = document.querySelector("#reykjavik");
+  if (reykjavikElement) {
+    let reykjavikDateElement = reykjavikElement.querySelector(".date");
+    let reykjavikTimeElement = reykjavikElement.querySelector(".time");
+    let reykjavikTime = moment().tz("Atlantic/Reykjavik");
+
+    reykjavikDateElement.innerHTML = reykjavikTime.format("MMMM	Do YYYY");
+    reykjavikTimeElement.innerHTML = reykjavikTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
